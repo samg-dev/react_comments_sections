@@ -1,10 +1,5 @@
 /** @jsx React.DOM */
 
-var data = [
-  {author: 'Pete Hunt', text: 'This is one comment'},
-  {author: 'Jordan Walke', text: 'This is *another* comment'}
-];
-
 var Comment = React.createClass({
   rawMarkup: function() {
     var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
@@ -17,7 +12,7 @@ var Comment = React.createClass({
         <h2 className='commentAuthor'>
           {this.props.author}
         </h2>
-        <span dangerouslySetInnerHTML={this.rawMarkup()} />
+        <span className='commentText' dangerouslySetInnerHTML={this.rawMarkup()} />
       </div>
     );
   }
